@@ -13,3 +13,4 @@ hasTooltip.forEach(item => item.addEventListener('click', (e) => {
     tooltip.style.left = (left + 'px');
     tooltip.classList.add('tooltip_active');
   }
+}
