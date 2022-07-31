@@ -28,11 +28,12 @@ tasksAdd.addEventListener('click', (e) => {
     }
 });
 
-tasksInput.addEventListener('keyup', (e) => {
-    e.preventDefault();
-    if(e.key === 'Enter' && tasksInput.value.trim().length !== 0) {   
-        taskListAdd(tasksInput.value);
-    } else if(e.key === 'Enter') {
-        tasksInput.value = '';
-    }
-});
+// Можнобез обработчика клика по клавиатуре
+// tasksInput.addEventListener('keyup', (e) => {
+//     e.preventDefault();
+//     if(e.key === 'Enter' && tasksInput.value.trim().length !== 0) {   
+//         taskListAdd(tasksInput.value);
+//     } else if(e.key === 'Enter') {
+//         tasksInput.value = '';
+//     }
+// });
