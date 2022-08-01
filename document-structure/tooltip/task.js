@@ -1,6 +1,6 @@
 const hasTooltip = Array.from(document.querySelectorAll('.has-tooltip'));
 const tooltip = document.querySelector('.tooltip');
- 
+
 hasTooltip.forEach(item => item.addEventListener('click', (e) => {
   e.preventDefault();
   const { top, left } = item.getBoundingClientRect() 
@@ -13,4 +13,4 @@ hasTooltip.forEach(item => item.addEventListener('click', (e) => {
     tooltip.style.left = (left + 'px');
     tooltip.classList.add('tooltip_active');
   }
-}
+}));
