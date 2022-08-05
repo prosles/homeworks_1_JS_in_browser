@@ -1,4 +1,4 @@
-    window.addEventListener('load', () => {
+window.addEventListener('load', () => {
 
         const xhr = new XMLHttpRequest();
       
@@ -8,28 +8,27 @@
             if(xhr.readyState === 4) {
                 const items = document.getElementById('items');
                 const loader = document.getElementById('loader');
+                const json = JSON.parse(xhr.responseText)
       
-                const json = JSON.parse(xhr.responseText);
-                const data = json.response.Valute;
-      
+                const data = Object.entries(json.response.Valute)
+
                 loader.classList.remove('loader_active');
-      
-                for(let item in data) {
-                    const {CharCode, Value} = data[item];
+
+               data.forEach( (item) => {
                     items.insertAdjacentHTML('beforeEnd',`
                         <div class="item">
                             <div class="item__code">
-                                ${CharCode}
+                            ${item[1].CharCode}
                             </div>
                             <div class="item__value">
-                                ${Value}
+                            ${item[1].Value}
                             </div>
                             <div class="item__currency">
                                 руб.
                             </div>
                         </div>    
-                    `);
-                };
+                    `)
+                }) 
             }
         }
-      })
+});
